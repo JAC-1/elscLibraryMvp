@@ -26,9 +26,13 @@ All dependencies are currently fulfilled by Expo, although you may have to insta
 
 2. Open a terminal in the cloned repository and run `yarn install`
 
-3. Run the app: `npx expo start`
+3. Make sure expo is installed by running `expo start` if it is not installed run `npm install expo`
 
-4. Follow the instructions to preview your app. It's recommended that you install your phone's respective expo app for easier debugging and a more accurate preview the app
+4. Install any cli tools that come up in expo error message.
+
+5. Run the app: `npx expo start`
+
+6. Follow the instructions to preview your app. It's recommended that you install your phone's respective expo app for easier debugging and a more accurate preview the app
 
 ## Making and contributing changes
 
