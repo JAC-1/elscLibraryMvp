@@ -1,5 +1,5 @@
+import "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
-import { useFonts } from "expo-font";
 import * as React from "react";
 import {
   StyleSheet,
@@ -7,104 +7,122 @@ import {
   View,
   Button,
   Pressable,
+  Image,
+  ScrollView,
   SafeAreaView,
 } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-export default function HomeScreen() {
-  const [loaded] = useFonts({
-    BebasNeue: require("../../assets/fonts/BebasNeue-Regular.ttf"),
-  });
+const Stack = createStackNavigator();
 
-  if (!loaded) {
-    return null;
-  }
+export default function SettingsScreen({ navigation }) {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView>
       <StatusBar style="dark" />
-      <View style={styles.container}>
-        <View style={styles.headerContainer}>
-          <Text style={styles.span}>ELSC</Text>
-          <Text style={styles.span}>LIBRARY</Text>
+      <ScrollView // the vertical allcontainer
+        contentContainerStyle={styles.contentContainer}
+      >
+        <View style={styles.divForCornerLogo}>
+          <Text style={styles.cornerLogo}>ELSCLIB</Text>
         </View>
-        <View style={styles.buttonsContainer}>
-          <Pressable
-            style={styles.purpleButton}
-            onPress={() => alert("This is the LOGIN button.")}
+        <View style={styles.horizContainer}>
+          <ScrollView // the horizontal div
+            horizontal={true}
+            contentContainerStyle={styles.horizInnerContainer}
+            showsHorizontalScrollIndicator={false}
           >
-            <Text style={styles.purpleButtonText}>LOGIN</Text>
-          </Pressable>
-          <Pressable
-            style={styles.whiteButton}
-            onPress={() => alert("This is the REGISTER button.")}
-          >
-            <Text style={styles.whiteButtonText}>REGISTER</Text>
-          </Pressable>
+            <Image
+              style={styles.bookWireframe}
+              source={require("../../assets/images/bookWireframe.png")}
+            />
+            <Image
+              style={styles.bookWireframe}
+              source={require("../../assets/images/bookWireframe2.png")}
+            />
+            <Image
+              style={styles.bookWireframe}
+              source={require("../../assets/images/bookWireframe2.png")}
+            />
+          </ScrollView>
         </View>
-      </View>
+        <View style={styles.buttonContainer}>
+          <Pressable style={styles.purpleButton}></Pressable>
+        </View>
+        <View>
+          <Text style={styles.text}>DUE 01/24</Text>
+          <Text style={styles.text}>DUE 01/24</Text>
+          <Text style={styles.text}>DUE 01/24</Text>
+          <Text style={styles.text}>DUE 01/24</Text>
+          <Text style={styles.text}>DUE 01/24</Text>
+          <Text style={styles.text}>DUE 01/24</Text>
+          <Text style={styles.text}>DUE 01/24</Text>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-    alignItems: "center",
+  contentContainer: {
     justifyContent: "center",
+    alignItems: "center",
+    color: "green",
+    backgroundColor: "white",
+    flexDirection: "column",
   },
-  headerContainer: {
-    flex: 1,
+  divForCornerLogo: {
+    height: 100,
     width: "100%",
-    alignItems: "center",
-    justifyContent: "center",
     backgroundColor: "white",
+    alignItems: "flex-end",
+    justifyContent: "flex-start",
   },
-  span: {
-    color: "black",
+  cornerLogo: {
+    fontSize: 25,
     fontWeight: "900",
-    fontSize: 90,
-    fontFamily: "BebasNeue",
+    color: "black",
   },
-  buttonsContainer: {
-    flex: 1,
-    alignItems: "center",
+  horizContainer: {
+    width: "100%",
+    height: 300,
+  },
+  horizInnerContainer: {
+    flexDirection: "row",
+    paddingHorizontal: 30,
+  },
+  bookWireframe: {
+    width: 200,
+    height: 300,
+    marginHorizontal: 15,
+  },
+  buttonContainer: {
     justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    backgroundColor: "white",
+    paddingVertical: 20,
   },
   purpleButton: {
-    backgroundColor: "#4B4FBD",
-    paddingHorizontal: 90,
+    backgroundColor: "#7FFAA9",
+    width: "80%",
     paddingVertical: 30,
-    borderWidth: 3,
+    borderWidth: 4,
     borderColor: "black",
-    borderRadius: 10,
-    shadowColor: "#000",
-    shadowOffset: { width: 4, height: 4 },
-    shadowOpacity: 1,
-    shadowRadius: 0.2,
+    borderRadius: "50%",
   },
-  purpleButtonText: {
-    color: "white",
-    fontWeight: "700",
-    fontSize: 20,
-    letterSpacing: 3,
-  },
-  whiteButton: {
-    backgroundColor: "white",
-    paddingHorizontal: 40,
-    paddingVertical: 25,
-    borderWidth: 3,
+  navigateButton: {
+    backgroundColor: "#7FFAA9",
+    width: "80%",
+    paddingVertical: 30,
+    borderWidth: 4,
     borderColor: "black",
-    borderRadius: 10,
-    margin: 8,
-    shadowColor: "#000",
-    shadowOffset: { width: 4, height: 4 },
-    shadowOpacity: 1,
-    shadowRadius: 0.2,
+    borderRadius: "50%",
   },
-  whiteButtonText: {
-    color: "black",
+  text: {
+    fontSize: 40,
     fontWeight: "700",
-    fontSize: 20,
-    letterSpacing: 3,
+    fontStyle: "italic",
   },
 });
