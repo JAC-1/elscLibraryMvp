@@ -15,7 +15,7 @@ import {
   Dimensions,
 } from "react-native";
 
-export default function BooksOutScreen({ navigation }) {
+export default function BooksOut({ navigation }) {
   const [loaded] = useFonts({
     BebasNeue: require("../../assets/fonts/BebasNeue-Regular.ttf"),
     BalooThambi: require("../../assets/fonts/BalooThambi2-Regular.ttf"),

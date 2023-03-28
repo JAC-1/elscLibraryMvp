@@ -1,8 +1,6 @@
 import React, { Component, PureComponent } from "react";
 import { StatusBar } from "expo-status-bar";
 import "react-native-gesture-handler";
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Path } from "react-native-svg";
 
@@ -10,13 +8,7 @@ import { useFonts } from "expo-font";
 
 import {
   StyleSheet,
-  Dimensions,
-  Button,
   View,
-  TouchableOpacity,
-  SafeAreaView,
-  ScrollView,
-  TextInput,
   Text,
   Pressable,
 } from "react-native";
@@ -33,8 +25,7 @@ export default function TitleScreen({ navigation }) {
   if (!loaded) {
     return null;
   }
-  const staticWidth = Dimensions.get("window").width * 0.3;
-  const staticHeight = Dimensions.get("window").height * 0.3;
+
 
   return (
     <LinearGradient

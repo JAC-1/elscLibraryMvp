@@ -19,7 +19,7 @@ import {
   Dimensions,
 } from "react-native";
 
-export default function SettingsScreen({ navigation }) {
+export default function Settings({ navigation }) {
   const [visible, setVisible] = useState(false);
   const show = () => setVisible(true);
   const hide = () => setVisible(false);
@@ -79,12 +79,12 @@ export default function SettingsScreen({ navigation }) {
         </View>
 
         <View style={styles.purpleUnderlinedContainer}>
-          <Pressable onPress={() => navigation.navigate("BooksHistoryScreen")}>
+          <Pressable onPress={() => navigation.navigate("History")}>
             <Text style={[styles.purpleUnderlined, styles.fontFragment]}>
               Change email
             </Text>
           </Pressable>
-          <Pressable onPress={() => navigation.navigate("BooksHistoryScreen")}>
+          <Pressable onPress={() => navigation.navigate("History")}>
             <Text style={[styles.purpleUnderlined, styles.fontFragment]}>
               Change password
             </Text>
@@ -92,7 +92,7 @@ export default function SettingsScreen({ navigation }) {
         </View>
 
         <View style={styles.emojisPartContainer}>
-          <Pressable onPress={() => navigation.navigate("BooksHistoryScreen")}>
+          <Pressable onPress={() => navigation.navigate("History")}>
             <View style={styles.emojisPartDividedForFlexSpaceBetween}>
               <Text style={[styles.emojisPart, styles.fontFragment]}>
                 Report a bug

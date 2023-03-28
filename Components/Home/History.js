@@ -16,7 +16,7 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-export default function BooksHistoryScreen({ navigation }) {
+export default function History({ navigation }) {
   const [loaded] = useFonts({
     BebasNeue: require("../../assets/fonts/BebasNeue-Regular.ttf"),
     BalooThambi: require("../../assets/fonts/BalooThambi2-Regular.ttf"),

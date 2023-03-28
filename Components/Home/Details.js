@@ -18,7 +18,7 @@ import {
 
 /* Note to self: When you get rid of the modal triggering button, get rid of the View and the flex that it uses, or there will be a third of the page that will seem buggy.  */
 
-export default function DetailsScreen({ navigation }) {
+export default function Details({ navigation }) {
   const [visible, setVisible] = useState(false);
   const show = () => setVisible(true);
   const hide = () => setVisible(false);
@@ -80,12 +80,12 @@ export default function DetailsScreen({ navigation }) {
         </Modal>
       </View>
       <View style={styles.centering}>
-        <Pressable onPress={() => navigation.navigate("BooksOutScreen")}>
+        <Pressable onPress={() => navigation.navigate("BooksOut")}>
           <Text style={styles.fontFragment}>Books out</Text>
         </Pressable>
       </View>
       <View style={styles.centering}>
-        <Pressable onPress={() => navigation.navigate("BooksHistoryScreen")}>
+        <Pressable onPress={() => navigation.navigate("History")}>
           <Text style={styles.fontFragment}>History</Text>
         </Pressable>
       </View>

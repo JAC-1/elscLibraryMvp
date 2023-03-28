@@ -53,7 +53,7 @@ export default function IntroPopupScreen({ navigation }) {
             right: 20,
             transform: [{ rotate: "-5deg" }],
           }}
-          onPress={() => navigation.navigate("TabMetaBar")}
+          onPress={() => navigation.navigate("HomeNavigation")}
         >
           <View style={styles.purpleButton}>
             <Text style={styles.buttonText}>Okay!</Text>

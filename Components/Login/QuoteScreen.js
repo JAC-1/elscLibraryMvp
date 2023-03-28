@@ -48,7 +48,7 @@ class RNConfetti extends React.PureComponent {
 export default function QuoteScreen({ navigation }) {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      navigation.navigate("TabMetaBar");
+      navigation.navigate("HomeNavigation");
     }, 3000);
 
     return () => {
