@@ -1,5 +1,5 @@
+import "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
-import { useFonts } from "expo-font";
 import * as React from "react";
 import {
   StyleSheet,
@@ -7,104 +7,104 @@ import {
   View,
   Button,
   Pressable,
+  Dimensions,
+  Image,
+  ScrollView,
   SafeAreaView,
 } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-export default function HomeScreen() {
-  const [loaded] = useFonts({
-    BebasNeue: require("../../assets/fonts/BebasNeue-Regular.ttf"),
-  });
+const Stack = createStackNavigator();
 
-  if (!loaded) {
-    return null;
-  }
+export default function SettingsScreen({ navigation }) {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={styles.contentContainer}>
       <StatusBar style="dark" />
-      <View style={styles.container}>
-        <View style={styles.headerContainer}>
-          <Text style={styles.span}>ELSC</Text>
-          <Text style={styles.span}>LIBRARY</Text>
-        </View>
-        <View style={styles.buttonsContainer}>
-          <Pressable
-            style={styles.purpleButton}
-            onPress={() => alert("This is the LOGIN button.")}
-          >
-            <Text style={styles.purpleButtonText}>LOGIN</Text>
-          </Pressable>
-          <Pressable
-            style={styles.whiteButton}
-            onPress={() => alert("This is the REGISTER button.")}
-          >
-            <Text style={styles.whiteButtonText}>REGISTER</Text>
-          </Pressable>
-        </View>
+      <View style={styles.horizContainer}>
+        <ScrollView // the horizontal div
+          horizontal={true}
+          contentContainerStyle={styles.horizInnerContainer}
+          showsHorizontalScrollIndicator={false}
+        >
+          <Image
+            style={styles.bookWireframe}
+            source={require("../../assets/images/bookWireframe.png")}
+          />
+          <Image
+            style={styles.bookWireframe}
+            source={require("../../assets/images/bookWireframe2.png")}
+          />
+          <Image
+            style={styles.bookWireframe}
+            source={require("../../assets/images/bookWireframe2.png")}
+          />
+        </ScrollView>
+      </View>
+      <View style={styles.buttonContainer}>
+        <Pressable style={styles.greenButton}></Pressable>
+      </View>
+      <View>
+        <Text style={styles.text}>DUE 01/24</Text>
       </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-    alignItems: "center",
+  contentContainer: {
     justifyContent: "center",
-  },
-  headerContainer: {
-    flex: 1,
-    width: "100%",
     alignItems: "center",
-    justifyContent: "center",
+    color: "green",
     backgroundColor: "white",
+    flexDirection: "column",
+    height: "100%",
   },
-  span: {
-    color: "black",
+  cornerLogo: {
+    fontSize: 25,
     fontWeight: "900",
-    fontSize: 90,
-    fontFamily: "BebasNeue",
-  },
-  buttonsContainer: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  purpleButton: {
-    backgroundColor: "#4B4FBD",
-    paddingHorizontal: 90,
-    paddingVertical: 30,
-    borderWidth: 3,
-    borderColor: "black",
-    borderRadius: 10,
-    shadowColor: "#000",
-    shadowOffset: { width: 4, height: 4 },
-    shadowOpacity: 1,
-    shadowRadius: 0.2,
-  },
-  purpleButtonText: {
-    color: "white",
-    fontWeight: "700",
-    fontSize: 20,
-    letterSpacing: 3,
-  },
-  whiteButton: {
-    backgroundColor: "white",
-    paddingHorizontal: 40,
-    paddingVertical: 25,
-    borderWidth: 3,
-    borderColor: "black",
-    borderRadius: 10,
-    margin: 8,
-    shadowColor: "#000",
-    shadowOffset: { width: 4, height: 4 },
-    shadowOpacity: 1,
-    shadowRadius: 0.2,
-  },
-  whiteButtonText: {
     color: "black",
+  },
+  horizContainer: {
+    width: "100%",
+    height: 300,
+  },
+  horizInnerContainer: {
+    flexDirection: "row",
+    paddingHorizontal: 30,
+  },
+  bookWireframe: {
+    width: 200,
+    height: 300,
+    marginHorizontal: 15,
+  },
+  buttonContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    backgroundColor: "white",
+    paddingVertical: 20,
+  },
+  greenButton: {
+    backgroundColor: "lightgreen",
+    width: "80%",
+    paddingVertical: 30,
+    borderWidth: 4,
+    borderColor: "black",
+    borderRadius: Dimensions.get("window").width / 12,
+  },
+  navigateButton: {
+    backgroundColor: "#7FFAA9",
+    width: "80%",
+    paddingVertical: 30,
+    borderWidth: 4,
+    borderColor: "black",
+    borderRadius: Dimensions.get("window").width / 12,
+  },
+  text: {
+    fontSize: 40,
     fontWeight: "700",
-    fontSize: 20,
-    letterSpacing: 3,
+    fontStyle: "italic",
   },
 });

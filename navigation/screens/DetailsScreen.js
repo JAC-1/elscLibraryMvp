@@ -1,29 +1,49 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
+import { useFonts } from "expo-font";
 import {
-  SafeAreaView,
   StyleSheet,
-  Pressable,
-  Modal,
-  Button,
   Text,
   View,
-  Image,
+  Button,
+  Pressable,
+  TouchableOpacity,
   TouchableHighlight,
+  Image,
+  ScrollView,
+  SafeAreaView,
+  Modal,
+  Dimensions,
 } from "react-native";
 
-export default function DetailsScreen() {
+/* Note to self: When you get rid of the modal triggering button, get rid of the View and the flex that it uses, or there will be a third of the page that will seem buggy.  */
+
+export default function DetailsScreen({ navigation }) {
   const [visible, setVisible] = useState(false);
   const show = () => setVisible(true);
   const hide = () => setVisible(false);
+
+  const [loaded] = useFonts({
+    BebasNeue: require("../../assets/fonts/BebasNeue-Regular.ttf"),
+    BalooThambi: require("../../assets/fonts/BalooThambi2-Regular.ttf"),
+    Pattaya: require("../../assets/fonts/Pattaya-Regular.ttf"),
+    Raleway: require("../../assets/fonts/Raleway-Regular.ttf"),
+    RalewayBold: require("../../assets/fonts/Raleway-Bold.ttf"),
+  });
+
+  if (!loaded) {
+    return null;
+  }
+  const staticWidth = Dimensions.get("window").width;
+  const staticHeight = Dimensions.get("window").height;
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <SafeAreaView style={styles.safeAreaContainer}>
       <StatusBar style="dark" />
-      <View style={styles.fill}>
+      <View style={styles.centering}>
         <TouchableHighlight
           onPress={show}
           style={{
-            borderRadius: "20%",
+            borderRadius: Dimensions.get("window").width / 12,
             alignItems: "center",
             width: "80%",
           }}
@@ -34,7 +54,6 @@ export default function DetailsScreen() {
             </Text>
           </View>
         </TouchableHighlight>
-
         <Modal
           visible={visible}
           onRequestClose={hide}
@@ -59,17 +78,38 @@ export default function DetailsScreen() {
           </View>
         </Modal>
       </View>
+      <View style={styles.centering}>
+        <Pressable onPress={() => navigation.navigate("BooksOutScreen")}>
+          <Text style={styles.fontFragment}>Books out</Text>
+        </Pressable>
+      </View>
+      <View style={styles.centering}>
+        <Pressable onPress={() => navigation.navigate("BooksHistoryScreen")}>
+          <Text style={styles.fontFragment}>History</Text>
+        </Pressable>
+      </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  fill: {
+  safeAreaContainer: {
+    width: "100%",
+    height: "100%",
+    flexDirection: "column",
+    backgroundColor: "white",
+  },
+  centering: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "white",
   },
+  fontFragment: {
+    fontFamily: "BebasNeue",
+    fontWeight: "400",
+    fontSize: 60,
+  },
+
   upper: {
     height: "40%",
   },
@@ -146,6 +186,6 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     borderWidth: 4,
     borderColor: "black",
-    borderRadius: "20%",
+    borderRadius: Dimensions.get("window").width / 12,
   },
 });
