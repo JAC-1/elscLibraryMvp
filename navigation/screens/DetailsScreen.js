@@ -43,7 +43,7 @@ export default function DetailsScreen({ navigation }) {
         <TouchableHighlight
           onPress={show}
           style={{
-            borderRadius: "20%",
+            borderRadius: Dimensions.get("window").width / 12,
             alignItems: "center",
             width: "80%",
           }}
@@ -54,7 +54,6 @@ export default function DetailsScreen({ navigation }) {
             </Text>
           </View>
         </TouchableHighlight>
-
         <Modal
           visible={visible}
           onRequestClose={hide}
@@ -187,6 +186,6 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     borderWidth: 4,
     borderColor: "black",
-    borderRadius: "20%",
+    borderRadius: Dimensions.get("window").width / 12,
   },
 });

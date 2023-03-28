@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
-    borderRadius: 14,
+    borderRadius: Dimensions.get("window").width / 12,
     shadowColor: "#000",
     shadowOffset: { width: 2, height: 2 },
     shadowOpacity: 1,
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
-    borderRadius: "15%",
+    borderRadius: Dimensions.get("window").width / 12,
     shadowColor: "#000",
     shadowOffset: { width: 4, height: 4 },
     shadowOpacity: 1,

@@ -7,6 +7,7 @@ import {
   View,
   Button,
   Pressable,
+  Dimensions,
   Image,
   ScrollView,
   SafeAreaView,
@@ -19,47 +20,34 @@ const Stack = createStackNavigator();
 
 export default function SettingsScreen({ navigation }) {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.contentContainer}>
       <StatusBar style="dark" />
-      <ScrollView // the vertical allcontainer
-        contentContainerStyle={styles.contentContainer}
-      >
-        <View style={styles.divForCornerLogo}>
-          <Text style={styles.cornerLogo}>ELSCLIB</Text>
-        </View>
-        <View style={styles.horizContainer}>
-          <ScrollView // the horizontal div
-            horizontal={true}
-            contentContainerStyle={styles.horizInnerContainer}
-            showsHorizontalScrollIndicator={false}
-          >
-            <Image
-              style={styles.bookWireframe}
-              source={require("../../assets/images/bookWireframe.png")}
-            />
-            <Image
-              style={styles.bookWireframe}
-              source={require("../../assets/images/bookWireframe2.png")}
-            />
-            <Image
-              style={styles.bookWireframe}
-              source={require("../../assets/images/bookWireframe2.png")}
-            />
-          </ScrollView>
-        </View>
-        <View style={styles.buttonContainer}>
-          <Pressable style={styles.purpleButton}></Pressable>
-        </View>
-        <View>
-          <Text style={styles.text}>DUE 01/24</Text>
-          <Text style={styles.text}>DUE 01/24</Text>
-          <Text style={styles.text}>DUE 01/24</Text>
-          <Text style={styles.text}>DUE 01/24</Text>
-          <Text style={styles.text}>DUE 01/24</Text>
-          <Text style={styles.text}>DUE 01/24</Text>
-          <Text style={styles.text}>DUE 01/24</Text>
-        </View>
-      </ScrollView>
+      <View style={styles.horizContainer}>
+        <ScrollView // the horizontal div
+          horizontal={true}
+          contentContainerStyle={styles.horizInnerContainer}
+          showsHorizontalScrollIndicator={false}
+        >
+          <Image
+            style={styles.bookWireframe}
+            source={require("../../assets/images/bookWireframe.png")}
+          />
+          <Image
+            style={styles.bookWireframe}
+            source={require("../../assets/images/bookWireframe2.png")}
+          />
+          <Image
+            style={styles.bookWireframe}
+            source={require("../../assets/images/bookWireframe2.png")}
+          />
+        </ScrollView>
+      </View>
+      <View style={styles.buttonContainer}>
+        <Pressable style={styles.greenButton}></Pressable>
+      </View>
+      <View>
+        <Text style={styles.text}>DUE 01/24</Text>
+      </View>
     </SafeAreaView>
   );
 }
@@ -71,13 +59,7 @@ const styles = StyleSheet.create({
     color: "green",
     backgroundColor: "white",
     flexDirection: "column",
-  },
-  divForCornerLogo: {
-    height: 100,
-    width: "100%",
-    backgroundColor: "white",
-    alignItems: "flex-end",
-    justifyContent: "flex-start",
+    height: "100%",
   },
   cornerLogo: {
     fontSize: 25,
@@ -104,13 +86,13 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     paddingVertical: 20,
   },
-  purpleButton: {
-    backgroundColor: "#7FFAA9",
+  greenButton: {
+    backgroundColor: "lightgreen",
     width: "80%",
     paddingVertical: 30,
     borderWidth: 4,
     borderColor: "black",
-    borderRadius: "50%",
+    borderRadius: Dimensions.get("window").width / 12,
   },
   navigateButton: {
     backgroundColor: "#7FFAA9",
@@ -118,7 +100,7 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     borderWidth: 4,
     borderColor: "black",
-    borderRadius: "50%",
+    borderRadius: Dimensions.get("window").width / 12,
   },
   text: {
     fontSize: 40,

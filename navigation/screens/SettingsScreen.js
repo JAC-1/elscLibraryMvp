@@ -227,6 +227,8 @@ const styles = StyleSheet.create({
 
     borderTopLeftRadius: 5,
     borderTopRightRadius: 5,
+
+    zIndex: -2,
   },
   idCardDiv: {
     width: "85%",
@@ -285,7 +287,7 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     borderWidth: 4,
     borderColor: "black",
-    borderRadius: "20%",
+    borderRadius: Dimensions.get("window").width / 12,
   },
   input: {
     backgroundColor: "white",
@@ -295,7 +297,7 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
-    borderRadius: 14,
+    borderRadius: Dimensions.get("window").width / 12,
     shadowColor: "#000",
     shadowOffset: { width: 2, height: 2 },
     shadowOpacity: 1,
@@ -313,13 +315,12 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
-    borderRadius: "15%",
+    borderRadius: Dimensions.get("window").width / 12,
     shadowColor: "#000",
     shadowOffset: { width: 4, height: 4 },
     shadowOpacity: 1,
     shadowRadius: 0.2,
   },
-  /* here's a test comment */
   purpleButtonText: {
     color: "white",
     fontWeight: "700",
