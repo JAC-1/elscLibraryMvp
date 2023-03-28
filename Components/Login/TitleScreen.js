@@ -11,6 +11,7 @@ import {
   View,
   Text,
   Pressable,
+  Image,
 } from "react-native";
 
 export default function TitleScreen({ navigation }) {
@@ -25,6 +26,10 @@ export default function TitleScreen({ navigation }) {
   if (!loaded) {
     return null;
   }
+
+  const handleLogin = () => {
+    navigation.navigate("HomeNav");
+  };
 
 
   return (
@@ -70,16 +75,14 @@ export default function TitleScreen({ navigation }) {
         </View>
         <View style={styles.buttonsContainer}>
           <Pressable
-            style={styles.greenButton}
             onPress={() => navigation.navigate("Login")}
           >
-            <Text style={styles.greenButtonText}>Login</Text>
+            <Image source={require('../../assets/graphics/LoginButton.png')} style={styles.loginButton} resizeMode="cover" />
           </Pressable>
           <Pressable
-            style={styles.whiteButton}
             onPress={() => navigation.navigate("Register")}
           >
-            <Text style={styles.whiteButtonText}>Register</Text>
+            <Image source={require('../../assets/graphics/RegisterButton.png')} style={styles.registerButton} />
           </Pressable>
         </View>
       </View>
@@ -117,57 +120,17 @@ const styles = StyleSheet.create({
   buttonsContainer: {
     flex: 1,
     width: "100%",
+    height: "50%",
     alignItems: "center",
     justifyContent: "center",
   },
-  greenButton: {
-    backgroundColor: "#76FF94",
-    width: "70%",
-    height: "30%",
-    marginBottom: 20,
-
-    justifyContent: "center",
-    alignItems: "center",
-
-    borderWidth: 3,
-    borderColor: "black",
-    borderRadius: "25%",
-    shadowColor: "#000",
-    shadowOffset: { width: 4, height: 4 },
-    shadowOpacity: 1,
-    shadowRadius: 0.2,
-    transform: [{ rotate: "5deg" }],
+  loginButton: {
+    width: "50%",
+    height: "50%",
   },
-  greenButtonText: {
-    color: "black",
-    fontWeight: "700",
-    fontSize: 30,
-    letterSpacing: 3,
-    fontFamily: "RalewayBold",
-  },
-  whiteButton: {
-    backgroundColor: "white",
-    width: "60%",
-    height: "27%",
-
-    justifyContent: "center",
-    alignItems: "center",
-
-    borderWidth: 3,
-    borderColor: "black",
-    borderRadius: "25%",
-    margin: 8,
-    shadowColor: "#000",
-    shadowOffset: { width: 4, height: 4 },
-    shadowOpacity: 1,
-    shadowRadius: 0.2,
-    transform: [{ rotate: "-5deg" }],
-  },
-  whiteButtonText: {
-    color: "black",
-    fontWeight: "700",
-    fontSize: 30,
-    letterSpacing: 3,
-    fontFamily: "RalewayBold",
-  },
+  registerButton: {
+    width: 65,
+    height: undefined,
+    ratio: 0.9,
+  }
 });

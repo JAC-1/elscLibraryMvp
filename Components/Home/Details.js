@@ -43,7 +43,7 @@ export default function Details({ navigation }) {
         <TouchableHighlight
           onPress={show}
           style={{
-            borderRadius: "20%",
+            borderRadius: 20,
             alignItems: "center",
             width: "80%",
           }}
@@ -187,6 +187,6 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     borderWidth: 4,
     borderColor: "black",
-    borderRadius: "20%",
+    borderRadius: 15,
   },
 });

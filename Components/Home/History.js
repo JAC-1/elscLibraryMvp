@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
-    borderRadius: "15%",
+    borderRadius: 15,
     shadowColor: "#000",
     shadowOffset: { width: 4, height: 4 },
     shadowOpacity: 1,

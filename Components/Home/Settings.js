@@ -285,7 +285,7 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     borderWidth: 4,
     borderColor: "black",
-    borderRadius: "20%",
+    borderRadius: 15,
   },
   input: {
     backgroundColor: "white",
@@ -313,7 +313,7 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
-    borderRadius: "15%",
+    borderRadius: 15,
     shadowColor: "#000",
     shadowOffset: { width: 4, height: 4 },
     shadowOpacity: 1,

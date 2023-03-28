@@ -8,7 +8,11 @@ import Intro from "../Components/Login/IntroPopupScreen";
 export default function LoginNavigation() {
 	const LoginStack = createStackNavigator();
 	return (
-		<LoginStack.Navigator>
+		<LoginStack.Navigator
+			screenOptions={{
+				headerShown: false
+			}}
+		>
 			<LoginStack.Screen name="Title" component={Title} />
 			<LoginStack.Screen name="Register" component={Register} />
 			<LoginStack.Screen name="Login" component={Login} />

@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     borderWidth: 4,
     borderColor: "black",
-    borderRadius: "50%",
+    borderRadius: 15,
   },
   navigateButton: {
     backgroundColor: "#7FFAA9",
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     borderWidth: 4,
     borderColor: "black",
-    borderRadius: "50%",
+    borderRadius: 20,
   },
   text: {
     fontSize: 40,

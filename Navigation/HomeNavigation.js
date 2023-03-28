@@ -8,8 +8,6 @@ import Settings from "../Components/Home/Settings";
 
 import { Dimensions } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import Details from "../Components/Home/Details";
-import Settings from "../Components/Home/Settings";
 
 export default function HomeNavigation() {
   return (

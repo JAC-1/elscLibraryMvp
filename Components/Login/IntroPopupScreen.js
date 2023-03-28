@@ -104,28 +104,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   purpleButton: {
-    height: 60,
-    width: 180,
-
-    justifyContent: "center",
-    alignItems: "center",
-
-    backgroundColor: "#8B8FF9",
-    borderWidth: 3,
-    borderColor: "black",
-    borderRadius: "20%",
-    shadowColor: "#000",
-    shadowOffset: { width: 4, height: 4 },
-    shadowOpacity: 1,
-    shadowRadius: 0.2,
   },
   buttonText: {
-    color: "white",
-    fontFamily: "RalewayBold",
-    fontSize: 35,
-    shadowColor: "#000",
-    shadowOffset: { width: 2, height: 2 },
-    shadowOpacity: 0.7,
-    shadowRadius: 3,
   },
 });
