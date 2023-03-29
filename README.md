@@ -16,7 +16,6 @@ This app is an [Expo app](https://expo.dev), which uses the React Native Framewo
 
 1. Node ( > 16.0)
 2. Npm
-3. Yarn `npm install yarn`
 
 All dependencies are currently fulfilled by Expo, although you may have to install mobile destro specific depending on how you choose to preview the app. See bellow for preview instructions.
 
