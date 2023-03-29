@@ -7,13 +7,10 @@ import {
   View,
   Button,
   Pressable,
-  TouchableOpacity,
   TouchableHighlight,
   Image,
-  ScrollView,
   SafeAreaView,
   Modal,
-  Dimensions,
 } from "react-native";
 
 /* Note to self: When you get rid of the modal triggering button, get rid of the View and the flex that it uses, or there will be a third of the page that will seem buggy.  */
@@ -34,8 +31,6 @@ export default function Details({ navigation }) {
   if (!loaded) {
     return null;
   }
-  const staticWidth = Dimensions.get("window").width;
-  const staticHeight = Dimensions.get("window").height;
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
       <StatusBar style="dark" />
@@ -139,10 +134,8 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
-    borderBottomLeftRadius: "40%",
-    borderBottomRightRadius: "40%",
-    borderTopLeftRadius: "40%",
-    borderTopRightRadius: "10%",
+    borderRadius: 12,
+
 
     shadowColor: "#000",
     shadowOffset: { width: 5, height: 5 },
@@ -169,10 +162,7 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
-    borderBottomLeftRadius: "30%",
-    borderBottomRightRadius: "30%",
-    borderTopLeftRadius: "40%",
-    borderTopRightRadius: "10%",
+    borderRadius: 12,
 
     alignItems: "center",
     justifyContent: "center",

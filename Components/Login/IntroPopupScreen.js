@@ -83,10 +83,7 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
-    borderBottomLeftRadius: "40%",
-    borderBottomRightRadius: "40%",
-    borderTopLeftRadius: "40%",
-    borderTopRightRadius: "10%",
+    borderRadius: 12,
   },
   headerContainer: { textAlign: "left", width: "100%" },
   headerText: {

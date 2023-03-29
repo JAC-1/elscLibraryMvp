@@ -1,18 +1,17 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import Home from "../Components/Home/Home";
-import Details from "../Components/Home/Details";
-import History from "../Components/Home/History";
-import BooksOut from "../Components/Home/BooksOut";
 import Settings from "../Components/Home/Settings";
+import DetailsNav from "./DetailsNav";
 
 import { Dimensions } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
 export default function HomeNavigation() {
+  const HomeTab = createBottomTabNavigator();
   return (
-    <Tab.Navigator
-      initialRouteName={"Home"}
+    <HomeTab.Navigator
+      initialRouteName={"DetailsNav"}
       screenOptions={({ route }) => ({
         tabBarActiveTintColor: "slateblue",
         tabBarInactiveTintColor: "grey",
@@ -40,7 +39,7 @@ export default function HomeNavigation() {
 
           if (rn === "Home") {
             iconName = focused ? "alarm" : "alarm-outline";
-          } else if (rn === "Details") {
+          } else if (rn === "DetailsNav") {
             iconName = focused ? "book" : "book-outline";
           } else if (rn === "Settings") {
             iconName = focused ? "person" : "person-outline";
@@ -50,9 +49,10 @@ export default function HomeNavigation() {
         },
       })}
     >
-      <Tab.Screen name={"Home"} component={Home} />
-      <Tab.Screen name={"Details"} component={Details} />
-      <Tab.Screen name={"Settings"} component={Settings} />
-    </Tab.Navigator>
+      <HomeTab.Screen name={"Home"} component={Home} />
+      <HomeTab.Screen name={"DetailsNav"} component={DetailsNav} />
+      <HomeTab.Screen name={"Settings"} component={Settings} />
+    </HomeTab.Navigator>
   );
+
 }

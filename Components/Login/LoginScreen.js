@@ -1,8 +1,7 @@
 import * as React from "react";
 import { StatusBar } from "expo-status-bar";
 import "react-native-gesture-handler";
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
+import { globalStyles } from "../../Styles/globalStyles";
 
 import { useFonts } from "expo-font";
 
@@ -14,7 +13,8 @@ import {
   TextInput,
   Text,
   Pressable,
-  Image
+  Image,
+  View
 } from "react-native";
 
 export default function LoginScreen({ navigation }) {
@@ -26,11 +26,10 @@ export default function LoginScreen({ navigation }) {
     return null;
   }
   return (
-    <SafeAreaView style={styles.safeAreaContainer}>
+    <View style={styles.safeAreaContainer}>
       <StatusBar style="dark" />
-      <ScrollView
-        style={styles.scrollView}
-        contentContainerStyle={styles.contentContainer}
+      <View
+        style={styles.container}
       >
         <Text style={styles.header}>Login</Text>
         <Text style={styles.span}>Email</Text>
@@ -39,11 +38,12 @@ export default function LoginScreen({ navigation }) {
         <TextInput style={styles.input} />
         <Pressable
           onPress={() => navigation.navigate("QuoteScreen")}
+          style={globalStyles.buttonContainer}
         >
-          <Image source={require('../../assets/graphics/LoginButton.png')} style={styles.loginButton} />
+          <Image source={require('../../assets/graphics/LoginButton.png')} style={globalStyles.loginButton} />
         </Pressable>
-      </ScrollView>
-    </SafeAreaView>
+      </View>
+    </View>
   );
 }
 
@@ -51,10 +51,13 @@ const styles = StyleSheet.create({
   safeAreaContainer: {
     width: "100%",
     height: "100%",
-    flexDirection: "column",
     backgroundColor: "white",
   },
-  scrollView: {
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    marginVertical: "30%",
     height: "100%",
     width: "100%",
   },

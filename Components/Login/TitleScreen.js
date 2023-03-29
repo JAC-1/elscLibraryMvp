@@ -27,11 +27,6 @@ export default function TitleScreen({ navigation }) {
     return null;
   }
 
-  const handleLogin = () => {
-    navigation.navigate("HomeNav");
-  };
-
-
   return (
     <LinearGradient
       colors={["#7197FB", "#B7CAFB"]}
@@ -76,13 +71,15 @@ export default function TitleScreen({ navigation }) {
         <View style={styles.buttonsContainer}>
           <Pressable
             onPress={() => navigation.navigate("Login")}
+            style={styles.buttonContainer}
           >
-            <Image source={require('../../assets/graphics/LoginButton.png')} style={styles.loginButton} resizeMode="cover" />
+            <Image source={require('../../assets/graphics/LoginButton.png')} style={styles.loginButton} resizeMode="contain" />
           </Pressable>
           <Pressable
             onPress={() => navigation.navigate("Register")}
+            style={styles.buttonContainer}
           >
-            <Image source={require('../../assets/graphics/RegisterButton.png')} style={styles.registerButton} />
+            <Image source={require('../../assets/graphics/RegisterButton.png')} style={styles.registerButton} resizeMode="contain" />
           </Pressable>
         </View>
       </View>
@@ -120,17 +117,20 @@ const styles = StyleSheet.create({
   buttonsContainer: {
     flex: 1,
     width: "100%",
-    height: "50%",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-end"
+  },
+  buttonContainer: {
+    paddingVertical: "4%"
   },
   loginButton: {
-    width: "50%",
-    height: "50%",
+    width: "70%",
+    height: undefined,
+    aspectRatio: 2.7
   },
   registerButton: {
-    width: 65,
+    width: "60%",
     height: undefined,
-    ratio: 0.9,
+    aspectRatio: 2.7
   }
 });
