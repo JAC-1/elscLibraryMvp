@@ -3,20 +3,19 @@ import { StatusBar } from "expo-status-bar";
 import "react-native-gesture-handler";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
+import { globalStyles } from "../../Styles/globalStyles";
 
 import { useFonts } from "expo-font";
 
 import {
   StyleSheet,
   Dimensions,
-  Button,
-  View,
-  TouchableOpacity,
   SafeAreaView,
   ScrollView,
   TextInput,
   Text,
   Pressable,
+  Image
 } from "react-native";
 
 export default function RegisterScreen({ navigation }) {
@@ -48,10 +47,11 @@ export default function RegisterScreen({ navigation }) {
         <Text style={styles.span}>City</Text>
         <TextInput style={styles.input} />
         <Pressable
-          style={styles.purpleButton}
-          onPress={() => navigation.navigate("IntroPopup")}
+          style={globalStyles.buttonContainer}
+          onPress={() => navigation.navigate("Intro")}
+
         >
-          <Text style={styles.purpleButtonText}>Login</Text>
+          <Image source={require('../../assets/graphics/LoginButton.png')} style={globalStyles.loginButton} resizeMode="contain" />
         </Pressable>
       </ScrollView>
     </SafeAreaView>
@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
     height: "100%",
     flexDirection: "column",
     backgroundColor: "white",
+    paddingTop: "9%"
   },
   scrollView: {
     height: "100%",

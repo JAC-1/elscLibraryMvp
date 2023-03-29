@@ -11,7 +11,7 @@ export default function HomeNavigation() {
   const HomeTab = createBottomTabNavigator();
   return (
     <HomeTab.Navigator
-      initialRouteName={"DetailsNav"}
+      initialRouteName={"Home"}
       screenOptions={({ route }) => ({
         tabBarActiveTintColor: "slateblue",
         tabBarInactiveTintColor: "grey",

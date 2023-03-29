@@ -19,6 +19,12 @@ export const globalStyles = StyleSheet.create({
     width: "60%",
     height: undefined,
     aspectRatio: 2.7
+  },
+  okayButton: {
+    width: "80%",
+    height: undefined,
+    aspectRatio: 2.7
   }
+
 })
 

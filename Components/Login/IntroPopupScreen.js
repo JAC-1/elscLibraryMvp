@@ -5,12 +5,11 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
   Pressable,
-  Image,
-  ScrollView,
   SafeAreaView,
+  Image,
 } from "react-native";
+import { globalStyles } from "../../Styles/globalStyles";
 
 export default function IntroPopupScreen({ navigation }) {
   const [loaded] = useFonts({
@@ -49,18 +48,16 @@ export default function IntroPopupScreen({ navigation }) {
         <Pressable
           style={{
             position: "absolute",
-            bottom: -20,
-            right: 20,
+            bottom: "-7.5%",
+            right: "-10%",
             transform: [{ rotate: "-5deg" }],
           }}
-          onPress={() => navigation.navigate("HomeNavigation")}
+          onPress={() => navigation.navigate("HomeNav")}
         >
-          <View style={styles.purpleButton}>
-            <Text style={styles.buttonText}>Okay!</Text>
-          </View>
+          <Image source={require('../../assets/graphics/OkayButton.png')} style={globalStyles.okayButton} resizeMode="contain" />
         </Pressable>
-      </View>
-    </SafeAreaView>
+      </View >
+    </SafeAreaView >
   );
 }
 
