@@ -16,8 +16,6 @@ import {
   Image
 } from "react-native";
 
-import { SafeAreaView } from "react-native-safe-area-context";
-
 export default function RegisterScreen({ navigation }) {
   const [loaded] = useFonts({
     BebasNeue: require("../../assets/fonts/BebasNeue-Regular.ttf"),

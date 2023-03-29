@@ -11,6 +11,7 @@ import {
   Image,
   SafeAreaView,
   Modal,
+  Dimensions,
 } from "react-native";
 
 /* Note to self: When you get rid of the modal triggering button, get rid of the View and the flex that it uses, or there will be a third of the page that will seem buggy.  */
@@ -133,15 +134,10 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
-<<<<<<< HEAD:Components/Home/Details.js
-    borderRadius: 12,
-
-=======
     borderBottomLeftRadius: Dimensions.get("window").width / 12,
     borderBottomRightRadius: Dimensions.get("window").width / 12,
     borderTopLeftRadius: Dimensions.get("window").width / 12,
     borderTopRightRadius: Dimensions.get("window").width / 36,
->>>>>>> main:navigation/screens/DetailsScreen.js
 
     shadowColor: "#000",
     shadowOffset: { width: 5, height: 5 },
@@ -168,14 +164,10 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
-<<<<<<< HEAD:Components/Home/Details.js
-    borderRadius: 12,
-=======
     borderBottomLeftRadius: Dimensions.get("window").width / 12,
     borderBottomRightRadius: Dimensions.get("window").width / 12,
     borderTopLeftRadius: Dimensions.get("window").width / 12,
     borderTopRightRadius: Dimensions.get("window").width / 36,
->>>>>>> main:navigation/screens/DetailsScreen.js
 
     alignItems: "center",
     justifyContent: "center",
@@ -190,10 +182,6 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     borderWidth: 4,
     borderColor: "black",
-<<<<<<< HEAD:Components/Home/Details.js
-    borderRadius: 15,
-=======
     borderRadius: Dimensions.get("window").width / 12,
->>>>>>> main:navigation/screens/DetailsScreen.js
   },
 });

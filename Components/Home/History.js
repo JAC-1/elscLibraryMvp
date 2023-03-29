@@ -137,11 +137,7 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
-<<<<<<< HEAD:Components/Home/History.js
-    borderRadius: 15,
-=======
     borderRadius: Dimensions.get("window").width / 12,
->>>>>>> main:navigation/screens/BooksHistoryScreen.js
     shadowColor: "#000",
     shadowOffset: { width: 4, height: 4 },
     shadowOpacity: 1,

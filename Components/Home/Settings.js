@@ -283,11 +283,7 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     borderWidth: 4,
     borderColor: "black",
-<<<<<<< HEAD:Components/Home/Settings.js
-    borderRadius: 15,
-=======
     borderRadius: Dimensions.get("window").width / 12,
->>>>>>> main:navigation/screens/SettingsScreen.js
   },
   input: {
     backgroundColor: "white",
@@ -315,11 +311,7 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
-<<<<<<< HEAD:Components/Home/Settings.js
-    borderRadius: 15,
-=======
     borderRadius: Dimensions.get("window").width / 12,
->>>>>>> main:navigation/screens/SettingsScreen.js
     shadowColor: "#000",
     shadowOffset: { width: 4, height: 4 },
     shadowOpacity: 1,
