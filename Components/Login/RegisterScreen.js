@@ -57,11 +57,12 @@ export default function RegisterScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   safeAreaContainer: {
+    position: "relative",
     width: "100%",
     height: "100%",
     flexDirection: "column",
     backgroundColor: "white",
-    paddingTop: "9%"
+
   },
   scrollView: {
     height: "100%",
@@ -71,6 +72,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   header: {
+    paddingTop: "15%",
     fontSize: 60,
     fontFamily: "BebasNeue",
   },
