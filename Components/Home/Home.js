@@ -10,6 +10,7 @@ import {
   Image,
   ScrollView,
   SafeAreaView,
+  Platform,
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -52,12 +53,6 @@ export default function SettingsScreen({ navigation }) {
         </View>
         <View>
           <Text style={styles.text}>DUE 01/24</Text>
-          <Text style={styles.text}>DUE 01/24</Text>
-          <Text style={styles.text}>DUE 01/24</Text>
-          <Text style={styles.text}>DUE 01/24</Text>
-          <Text style={styles.text}>DUE 01/24</Text>
-          <Text style={styles.text}>DUE 01/24</Text>
-          <Text style={styles.text}>DUE 01/24</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -66,6 +61,8 @@ export default function SettingsScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   contentContainer: {
+    width: "100%",
+    height: "100%",
     justifyContent: "center",
     alignItems: "center",
     color: "green",
@@ -73,6 +70,9 @@ const styles = StyleSheet.create({
     flexDirection: "column",
   },
   divForCornerLogo: {
+    position: "relative",
+    right: 10,
+    top: Platform.OS === "ios" ? 20 : 0,
     height: 100,
     width: "100%",
     backgroundColor: "white",
