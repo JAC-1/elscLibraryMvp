@@ -84,10 +84,10 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
-    borderBottomLeftRadius: "40%",
-    borderBottomRightRadius: "40%",
-    borderTopLeftRadius: "40%",
-    borderTopRightRadius: "10%",
+    borderBottomLeftRadius: Dimensions.get("window").width / 12,
+    borderBottomRightRadius: Dimensions.get("window").width / 12,
+    borderTopLeftRadius: Dimensions.get("window").width / 12,
+    borderTopRightRadius: Dimensions.get("window").width / 36,
   },
   headerContainer: { textAlign: "left", width: "100%" },
   headerText: {

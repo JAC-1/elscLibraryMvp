@@ -56,6 +56,8 @@ const styles = StyleSheet.create({
     height: "100%",
     flexDirection: "column",
     backgroundColor: "white",
+    paddingTop:
+      Platform.OS === "android" ? Dimensions.get("window").height * 0.05 : 0,
   },
   scrollView: {
     height: "100%",
@@ -77,13 +79,13 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: "white",
-    height: Dimensions.get("window").height * 0.1,
+    height: Dimensions.get("window").height * 0.08,
     width: Dimensions.get("window").width * 0.65,
     padding: 10,
 
     borderWidth: 3,
     borderColor: "black",
-    borderRadius: Dimensions.get("window").width / 12,
+    borderRadius: Dimensions.get("window").width / 20,
     shadowColor: "#000",
     shadowOffset: { width: 2, height: 2 },
     shadowOpacity: 1,
@@ -100,11 +102,13 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
-    borderRadius: Dimensions.get("window").width / 12,
+    borderRadius: Dimensions.get("window").width / 15,
     shadowColor: "#000",
     shadowOffset: { width: 4, height: 4 },
     shadowOpacity: 1,
     shadowRadius: 0.2,
+
+    marginTop: 10,
   },
   purpleButtonText: {
     color: "white",
