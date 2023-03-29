@@ -7,18 +7,15 @@ import {
   View,
   Button,
   Pressable,
-  TouchableOpacity,
   TouchableHighlight,
   Image,
-  ScrollView,
   SafeAreaView,
   Modal,
-  Dimensions,
 } from "react-native";
 
 /* Note to self: When you get rid of the modal triggering button, get rid of the View and the flex that it uses, or there will be a third of the page that will seem buggy.  */
 
-export default function DetailsScreen({ navigation }) {
+export default function Details({ navigation }) {
   const [visible, setVisible] = useState(false);
   const show = () => setVisible(true);
   const hide = () => setVisible(false);
@@ -34,8 +31,6 @@ export default function DetailsScreen({ navigation }) {
   if (!loaded) {
     return null;
   }
-  const staticWidth = Dimensions.get("window").width;
-  const staticHeight = Dimensions.get("window").height;
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
       <StatusBar style="dark" />
@@ -79,12 +74,12 @@ export default function DetailsScreen({ navigation }) {
         </Modal>
       </View>
       <View style={styles.centering}>
-        <Pressable onPress={() => navigation.navigate("BooksOutScreen")}>
+        <Pressable onPress={() => navigation.navigate("BooksOut")}>
           <Text style={styles.fontFragment}>Books out</Text>
         </Pressable>
       </View>
       <View style={styles.centering}>
-        <Pressable onPress={() => navigation.navigate("BooksHistoryScreen")}>
+        <Pressable onPress={() => navigation.navigate("History")}>
           <Text style={styles.fontFragment}>History</Text>
         </Pressable>
       </View>
@@ -138,10 +133,15 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
+<<<<<<< HEAD:Components/Home/Details.js
+    borderRadius: 12,
+
+=======
     borderBottomLeftRadius: Dimensions.get("window").width / 12,
     borderBottomRightRadius: Dimensions.get("window").width / 12,
     borderTopLeftRadius: Dimensions.get("window").width / 12,
     borderTopRightRadius: Dimensions.get("window").width / 36,
+>>>>>>> main:navigation/screens/DetailsScreen.js
 
     shadowColor: "#000",
     shadowOffset: { width: 5, height: 5 },
@@ -168,10 +168,14 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
+<<<<<<< HEAD:Components/Home/Details.js
+    borderRadius: 12,
+=======
     borderBottomLeftRadius: Dimensions.get("window").width / 12,
     borderBottomRightRadius: Dimensions.get("window").width / 12,
     borderTopLeftRadius: Dimensions.get("window").width / 12,
     borderTopRightRadius: Dimensions.get("window").width / 36,
+>>>>>>> main:navigation/screens/DetailsScreen.js
 
     alignItems: "center",
     justifyContent: "center",
@@ -186,6 +190,10 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     borderWidth: 4,
     borderColor: "black",
+<<<<<<< HEAD:Components/Home/Details.js
+    borderRadius: 15,
+=======
     borderRadius: Dimensions.get("window").width / 12,
+>>>>>>> main:navigation/screens/DetailsScreen.js
   },
 });

@@ -1,21 +1,11 @@
 import React, { useEffect } from "react";
-import { StatusBar } from "expo-status-bar";
 import { useFonts } from "expo-font";
-import { LinearGradient } from "expo-linear-gradient";
-import Svg, { Path } from "react-native-svg";
 import ConfettiCannon from "react-native-confetti-cannon";
 import {
   StyleSheet,
   Text,
-  View,
-  Button,
-  Pressable,
-  TouchableOpacity,
-  TouchableHighlight,
   Image,
-  ScrollView,
   SafeAreaView,
-  Modal,
   Dimensions,
 } from "react-native";
 
@@ -48,7 +38,7 @@ class RNConfetti extends React.PureComponent {
 export default function QuoteScreen({ navigation }) {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      navigation.navigate("TabMetaBar");
+      navigation.navigate("HomeNav");
     }, 3000);
 
     return () => {

@@ -1,8 +1,6 @@
 import React, { Component, PureComponent } from "react";
 import { StatusBar } from "expo-status-bar";
 import "react-native-gesture-handler";
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Path } from "react-native-svg";
 
@@ -10,15 +8,10 @@ import { useFonts } from "expo-font";
 
 import {
   StyleSheet,
-  Dimensions,
-  Button,
   View,
-  TouchableOpacity,
-  SafeAreaView,
-  ScrollView,
-  TextInput,
   Text,
   Pressable,
+  Image,
 } from "react-native";
 
 export default function TitleScreen({ navigation }) {
@@ -33,8 +26,6 @@ export default function TitleScreen({ navigation }) {
   if (!loaded) {
     return null;
   }
-  const staticWidth = Dimensions.get("window").width * 0.3;
-  const staticHeight = Dimensions.get("window").height * 0.3;
 
   return (
     <LinearGradient colors={["#7197FB", "#B7CAFB"]} style={{ flex: 1 }}>
@@ -88,16 +79,16 @@ export default function TitleScreen({ navigation }) {
         </View>
         <View style={styles.buttonsContainer}>
           <Pressable
-            style={styles.greenButton}
             onPress={() => navigation.navigate("Login")}
+            style={styles.buttonContainer}
           >
-            <Text style={styles.greenButtonText}>Login</Text>
+            <Image source={require('../../assets/graphics/LoginButton.png')} style={styles.loginButton} resizeMode="contain" />
           </Pressable>
           <Pressable
-            style={styles.whiteButton}
             onPress={() => navigation.navigate("Register")}
+            style={styles.buttonContainer}
           >
-            <Text style={styles.whiteButtonText}>Register</Text>
+            <Image source={require('../../assets/graphics/RegisterButton.png')} style={styles.registerButton} resizeMode="contain" />
           </Pressable>
         </View>
       </View>
@@ -134,54 +125,19 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-end"
   },
-  greenButton: {
-    backgroundColor: "#76FF94",
+  buttonContainer: {
+    paddingVertical: "4%"
+  },
+  loginButton: {
     width: "70%",
-    height: "30%",
-    marginBottom: 20,
-
-    justifyContent: "center",
-    alignItems: "center",
-
-    borderWidth: 3,
-    borderColor: "black",
-    borderRadius: Dimensions.get("window").width / 12,
-    shadowColor: "#000",
-    shadowOffset: { width: 4, height: 4 },
-    shadowOpacity: 1,
-    shadowRadius: 0.2,
-    transform: [{ rotate: "5deg" }],
+    height: undefined,
+    aspectRatio: 2.7
   },
-  greenButtonText: {
-    color: "black",
-    fontSize: 30,
-    letterSpacing: 3,
-    fontFamily: "Raleway-Bold",
-  },
-  whiteButton: {
-    backgroundColor: "white",
+  registerButton: {
     width: "60%",
-    height: "27%",
-
-    justifyContent: "center",
-    alignItems: "center",
-
-    borderWidth: 3,
-    borderColor: "black",
-    borderRadius: Dimensions.get("window").width / 12,
-    margin: 8,
-    shadowColor: "#000",
-    shadowOffset: { width: 4, height: 4 },
-    shadowOpacity: 1,
-    shadowRadius: 0.2,
-    transform: [{ rotate: "-5deg" }],
-  },
-  whiteButtonText: {
-    color: "black",
-    fontSize: 30,
-    letterSpacing: 3,
-    fontFamily: "Raleway-Bold",
-  },
+    height: undefined,
+    aspectRatio: 2.7
+  }
 });

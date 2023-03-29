@@ -5,13 +5,11 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
   Pressable,
-  Dimensions,
-  Image,
-  ScrollView,
   SafeAreaView,
+  Image,
 } from "react-native";
+import { globalStyles } from "../../Styles/globalStyles";
 
 export default function IntroPopupScreen({ navigation }) {
   const [loaded] = useFonts({
@@ -50,18 +48,16 @@ export default function IntroPopupScreen({ navigation }) {
         <Pressable
           style={{
             position: "absolute",
-            bottom: -20,
-            right: 20,
+            bottom: "-7.5%",
+            right: "-10%",
             transform: [{ rotate: "-5deg" }],
           }}
-          onPress={() => navigation.navigate("TabMetaBar")}
+          onPress={() => navigation.navigate("HomeNav")}
         >
-          <View style={styles.purpleButton}>
-            <Text style={styles.buttonText}>Okay!</Text>
-          </View>
+          <Image source={require('../../assets/graphics/OkayButton.png')} style={globalStyles.okayButton} resizeMode="contain" />
         </Pressable>
-      </View>
-    </SafeAreaView>
+      </View >
+    </SafeAreaView >
   );
 }
 
@@ -84,10 +80,14 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
+<<<<<<< HEAD:Components/Login/IntroPopupScreen.js
+    borderRadius: 12,
+=======
     borderBottomLeftRadius: Dimensions.get("window").width / 12,
     borderBottomRightRadius: Dimensions.get("window").width / 12,
     borderTopLeftRadius: Dimensions.get("window").width / 12,
     borderTopRightRadius: Dimensions.get("window").width / 36,
+>>>>>>> main:navigation/screens/IntroPopupScreen.js
   },
   headerContainer: { textAlign: "left", width: "100%" },
   headerText: {
@@ -105,6 +105,8 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   purpleButton: {
+<<<<<<< HEAD:Components/Login/IntroPopupScreen.js
+=======
     height: 60,
     width: 180,
 
@@ -119,14 +121,8 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 4, height: 4 },
     shadowOpacity: 1,
     shadowRadius: 0.2,
+>>>>>>> main:navigation/screens/IntroPopupScreen.js
   },
   buttonText: {
-    color: "white",
-    fontFamily: "RalewayBold",
-    fontSize: 35,
-    shadowColor: "#000",
-    shadowOffset: { width: 2, height: 2 },
-    shadowOpacity: 0.7,
-    shadowRadius: 3,
   },
 });

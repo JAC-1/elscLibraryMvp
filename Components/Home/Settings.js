@@ -19,7 +19,7 @@ import {
   Dimensions,
 } from "react-native";
 
-export default function SettingsScreen({ navigation }) {
+export default function Settings({ navigation }) {
   const [visible, setVisible] = useState(false);
   const show = () => setVisible(true);
   const hide = () => setVisible(false);
@@ -79,12 +79,12 @@ export default function SettingsScreen({ navigation }) {
         </View>
 
         <View style={styles.purpleUnderlinedContainer}>
-          <Pressable onPress={() => navigation.navigate("BooksHistoryScreen")}>
+          <Pressable onPress={() => navigation.navigate("History")}>
             <Text style={[styles.purpleUnderlined, styles.fontFragment]}>
               Change email
             </Text>
           </Pressable>
-          <Pressable onPress={() => navigation.navigate("BooksHistoryScreen")}>
+          <Pressable onPress={() => navigation.navigate("History")}>
             <Text style={[styles.purpleUnderlined, styles.fontFragment]}>
               Change password
             </Text>
@@ -92,7 +92,7 @@ export default function SettingsScreen({ navigation }) {
         </View>
 
         <View style={styles.emojisPartContainer}>
-          <Pressable onPress={() => navigation.navigate("BooksHistoryScreen")}>
+          <Pressable onPress={() => navigation.navigate("History")}>
             <View style={styles.emojisPartDividedForFlexSpaceBetween}>
               <Text style={[styles.emojisPart, styles.fontFragment]}>
                 Report a bug
@@ -241,10 +241,7 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
-    borderBottomLeftRadius: "40%",
-    borderBottomRightRadius: "40%",
-    borderTopLeftRadius: "40%",
-    borderTopRightRadius: "10%",
+    borderRadius: 12,
 
     shadowColor: "#000",
     shadowOffset: { width: 5, height: 5 },
@@ -271,10 +268,7 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
-    borderBottomLeftRadius: "30%",
-    borderBottomRightRadius: "30%",
-    borderTopLeftRadius: "40%",
-    borderTopRightRadius: "10%",
+    borderRadius: 12,
 
     alignItems: "center",
     justifyContent: "center",
@@ -289,7 +283,11 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     borderWidth: 4,
     borderColor: "black",
+<<<<<<< HEAD:Components/Home/Settings.js
+    borderRadius: 15,
+=======
     borderRadius: Dimensions.get("window").width / 12,
+>>>>>>> main:navigation/screens/SettingsScreen.js
   },
   input: {
     backgroundColor: "white",
@@ -317,7 +315,11 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
+<<<<<<< HEAD:Components/Home/Settings.js
+    borderRadius: 15,
+=======
     borderRadius: Dimensions.get("window").width / 12,
+>>>>>>> main:navigation/screens/SettingsScreen.js
     shadowColor: "#000",
     shadowOffset: { width: 4, height: 4 },
     shadowOpacity: 1,
