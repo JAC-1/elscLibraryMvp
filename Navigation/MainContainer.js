@@ -46,6 +46,7 @@ function HomeNavigation({ navigation }) {
             height: Dimensions.get("window").height / 8,
             borderTopWidth: 3,
             borderTopColor: "black",
+            zIndex: 0,
           },
           null,
         ],

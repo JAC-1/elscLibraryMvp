@@ -85,6 +85,8 @@ const styles = StyleSheet.create({
     height: "100%",
     flexDirection: "column",
     backgroundColor: "white",
+    paddingTop:
+      Platform.OS === "android" ? Dimensions.get("window").height * 0.05 : 0,
   },
   scrollView: {
     height: "100%",
@@ -102,7 +104,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "yellow",
+    marginBottom: 15,
   },
   span: {
     fontFamily: "BebasNeue",
@@ -118,7 +120,7 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
-    borderRadius: 14,
+    borderRadius: Dimensions.get("window").width / 12,
     shadowColor: "#000",
     shadowOffset: { width: 2, height: 2 },
     shadowOpacity: 1,
@@ -135,7 +137,11 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
+<<<<<<< HEAD:Components/Home/History.js
     borderRadius: 15,
+=======
+    borderRadius: Dimensions.get("window").width / 12,
+>>>>>>> main:navigation/screens/BooksHistoryScreen.js
     shadowColor: "#000",
     shadowOffset: { width: 4, height: 4 },
     shadowOpacity: 1,

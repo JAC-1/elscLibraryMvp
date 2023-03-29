@@ -1,8 +1,6 @@
 import * as React from "react";
 import { StatusBar } from "expo-status-bar";
 import "react-native-gesture-handler";
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
 import { globalStyles } from "../../Styles/globalStyles";
 
 import { useFonts } from "expo-font";
@@ -17,6 +15,8 @@ import {
   Pressable,
   Image
 } from "react-native";
+
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function RegisterScreen({ navigation }) {
   const [loaded] = useFonts({
@@ -49,7 +49,6 @@ export default function RegisterScreen({ navigation }) {
         <Pressable
           style={globalStyles.buttonContainer}
           onPress={() => navigation.navigate("Intro")}
-
         >
           <Image source={require('../../assets/graphics/LoginButton.png')} style={globalStyles.loginButton} resizeMode="contain" />
         </Pressable>
@@ -86,20 +85,16 @@ const styles = StyleSheet.create({
   },
   input: {
     backgroundColor: "white",
-    height: Dimensions.get("window").height * 0.1,
+    height: Dimensions.get("window").height * 0.08,
     width: Dimensions.get("window").width * 0.65,
     padding: 10,
 
     borderWidth: 3,
     borderColor: "black",
-    borderRadius: 14,
+    borderRadius: Dimensions.get("window").width / 20,
     shadowColor: "#000",
     shadowOffset: { width: 2, height: 2 },
     shadowOpacity: 1,
     shadowRadius: 0.2,
-  },
-  purpleButton: {
-  },
-  purpleButtonText: {
   },
 });

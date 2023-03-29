@@ -80,7 +80,14 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
+<<<<<<< HEAD:Components/Login/IntroPopupScreen.js
     borderRadius: 12,
+=======
+    borderBottomLeftRadius: Dimensions.get("window").width / 12,
+    borderBottomRightRadius: Dimensions.get("window").width / 12,
+    borderTopLeftRadius: Dimensions.get("window").width / 12,
+    borderTopRightRadius: Dimensions.get("window").width / 36,
+>>>>>>> main:navigation/screens/IntroPopupScreen.js
   },
   headerContainer: { textAlign: "left", width: "100%" },
   headerText: {
@@ -98,6 +105,23 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   purpleButton: {
+<<<<<<< HEAD:Components/Login/IntroPopupScreen.js
+=======
+    height: 60,
+    width: 180,
+
+    justifyContent: "center",
+    alignItems: "center",
+
+    backgroundColor: "#8B8FF9",
+    borderWidth: 3,
+    borderColor: "black",
+    borderRadius: Dimensions.get("window").width / 12,
+    shadowColor: "#000",
+    shadowOffset: { width: 4, height: 4 },
+    shadowOpacity: 1,
+    shadowRadius: 0.2,
+>>>>>>> main:navigation/screens/IntroPopupScreen.js
   },
   buttonText: {
   },

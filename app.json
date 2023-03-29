@@ -24,7 +24,29 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "fonts": [
+        {
+          "asset": "./assets/fonts/BebasNeue-Regular.ttf",
+          "fontFamily": "BebasNeue-Regular"
+        },
+        {
+          "asset": "./assets/fonts/BalooThambi2-Regular.ttf",
+          "fontFamily": "BalooThambi2-Regular"
+        },
+        {
+          "asset": "./assets/fonts/Pattaya-Regular.ttf",
+          "fontFamily": "Pattaya-Regular"
+        },
+        {
+          "asset": "./assets/fonts/Raleway-Regular.ttf",
+          "fontFamily": "Raleway-Regular"
+        },
+        {
+          "asset": "./assets/fonts/Raleway-Bold.ttf",
+          "fontFamily": "Raleway-Bold"
+        }
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"

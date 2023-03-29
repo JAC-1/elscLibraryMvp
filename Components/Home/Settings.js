@@ -147,6 +147,8 @@ const styles = StyleSheet.create({
     height: "100%",
     flexDirection: "column",
     backgroundColor: "white",
+    paddingTop:
+      Platform.OS === "android" ? Dimensions.get("window").height * 0.05 : 0,
   },
   scrollView: {
     height: "100%",
@@ -227,6 +229,8 @@ const styles = StyleSheet.create({
 
     borderTopLeftRadius: 5,
     borderTopRightRadius: 5,
+
+    zIndex: -2,
   },
   idCardDiv: {
     width: "85%",
@@ -279,7 +283,11 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     borderWidth: 4,
     borderColor: "black",
+<<<<<<< HEAD:Components/Home/Settings.js
     borderRadius: 15,
+=======
+    borderRadius: Dimensions.get("window").width / 12,
+>>>>>>> main:navigation/screens/SettingsScreen.js
   },
   input: {
     backgroundColor: "white",
@@ -289,7 +297,7 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
-    borderRadius: 14,
+    borderRadius: Dimensions.get("window").width / 12,
     shadowColor: "#000",
     shadowOffset: { width: 2, height: 2 },
     shadowOpacity: 1,
@@ -307,13 +315,16 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
+<<<<<<< HEAD:Components/Home/Settings.js
     borderRadius: 15,
+=======
+    borderRadius: Dimensions.get("window").width / 12,
+>>>>>>> main:navigation/screens/SettingsScreen.js
     shadowColor: "#000",
     shadowOffset: { width: 4, height: 4 },
     shadowOpacity: 1,
     shadowRadius: 0.2,
   },
-  /* here's a test comment */
   purpleButtonText: {
     color: "white",
     fontWeight: "700",

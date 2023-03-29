@@ -38,7 +38,7 @@ export default function Details({ navigation }) {
         <TouchableHighlight
           onPress={show}
           style={{
-            borderRadius: 20,
+            borderRadius: Dimensions.get("window").width / 12,
             alignItems: "center",
             width: "80%",
           }}
@@ -49,7 +49,6 @@ export default function Details({ navigation }) {
             </Text>
           </View>
         </TouchableHighlight>
-
         <Modal
           visible={visible}
           onRequestClose={hide}
@@ -134,8 +133,15 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
+<<<<<<< HEAD:Components/Home/Details.js
     borderRadius: 12,
 
+=======
+    borderBottomLeftRadius: Dimensions.get("window").width / 12,
+    borderBottomRightRadius: Dimensions.get("window").width / 12,
+    borderTopLeftRadius: Dimensions.get("window").width / 12,
+    borderTopRightRadius: Dimensions.get("window").width / 36,
+>>>>>>> main:navigation/screens/DetailsScreen.js
 
     shadowColor: "#000",
     shadowOffset: { width: 5, height: 5 },
@@ -162,7 +168,14 @@ const styles = StyleSheet.create({
 
     borderWidth: 3,
     borderColor: "black",
+<<<<<<< HEAD:Components/Home/Details.js
     borderRadius: 12,
+=======
+    borderBottomLeftRadius: Dimensions.get("window").width / 12,
+    borderBottomRightRadius: Dimensions.get("window").width / 12,
+    borderTopLeftRadius: Dimensions.get("window").width / 12,
+    borderTopRightRadius: Dimensions.get("window").width / 36,
+>>>>>>> main:navigation/screens/DetailsScreen.js
 
     alignItems: "center",
     justifyContent: "center",
@@ -177,6 +190,10 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     borderWidth: 4,
     borderColor: "black",
+<<<<<<< HEAD:Components/Home/Details.js
     borderRadius: 15,
+=======
+    borderRadius: Dimensions.get("window").width / 12,
+>>>>>>> main:navigation/screens/DetailsScreen.js
   },
 });

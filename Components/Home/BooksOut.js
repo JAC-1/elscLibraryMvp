@@ -27,8 +27,6 @@ export default function BooksOut({ navigation }) {
   if (!loaded) {
     return null;
   }
-  const staticWidth = Dimensions.get("window").width;
-  const staticHeight = Dimensions.get("window").height;
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
       <StatusBar style="dark" />
@@ -69,6 +67,8 @@ const styles = StyleSheet.create({
     height: "100%",
     flexDirection: "column",
     backgroundColor: "white",
+    paddingTop:
+      Platform.OS === "android" ? Dimensions.get("window").height * 0.05 : 0,
   },
   scrollView: {
     height: "100%",
