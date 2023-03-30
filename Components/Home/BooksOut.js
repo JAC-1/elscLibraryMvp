@@ -1,7 +1,5 @@
 import { StatusBar } from "expo-status-bar";
 import { useFonts } from "expo-font";
-import { LinearGradient } from "expo-linear-gradient";
-import Svg, { Path } from "react-native-svg";
 import {
   StyleSheet,
   Text,
@@ -87,44 +85,6 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     fontSize: 30,
     color: "black",
-  },
-  input: {
-    backgroundColor: "white",
-    height: Dimensions.get("window").height * 0.1,
-    width: Dimensions.get("window").width * 0.65,
-    padding: 10,
-
-    borderWidth: 3,
-    borderColor: "black",
-    borderRadius: 14,
-    shadowColor: "#000",
-    shadowOffset: { width: 2, height: 2 },
-    shadowOpacity: 1,
-    shadowRadius: 0.2,
-  },
-  purpleButton: {
-    backgroundColor: "#817BC9",
-    width: "65%",
-    height: Dimensions.get("window").height * 0.15,
-    marginBottom: 20,
-
-    justifyContent: "center",
-    alignItems: "center",
-
-    borderWidth: 3,
-    borderColor: "black",
-    borderRadius: 15,
-    shadowColor: "#000",
-    shadowOffset: { width: 4, height: 4 },
-    shadowOpacity: 1,
-    shadowRadius: 0.2,
-  },
-  purpleButtonText: {
-    color: "white",
-    fontWeight: "700",
-    fontSize: 30,
-    letterSpacing: 3,
-    fontFamily: "BebasNeue",
   },
   bookWireframe: {
     width: 200,
