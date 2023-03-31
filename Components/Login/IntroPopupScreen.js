@@ -1,11 +1,12 @@
 import { StatusBar } from "expo-status-bar";
 import { useFonts } from "expo-font";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   StyleSheet,
   Text,
   View,
   Pressable,
+  BackHandler,
   SafeAreaView,
   Dimensions,
   Image,
@@ -13,6 +14,21 @@ import {
 import { globalStyles } from "../../Styles/globalStyles";
 
 export default function IntroPopupScreen({ navigation }) {
+  /* This hook disables the back button for this screen on Android */
+  useEffect(() => {
+    const backAction = () => {
+      /* Return `true` to prevent going back from this screen */
+      return true;
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      backAction
+    );
+
+    return () => backHandler.remove();
+  }, []);
+
   const [loaded] = useFonts({
     BebasNeue: require("../../assets/fonts/BebasNeue-Regular.ttf"),
     BalooThambi: require("../../assets/fonts/BalooThambi2-Regular.ttf"),
@@ -55,10 +71,14 @@ export default function IntroPopupScreen({ navigation }) {
           }}
           onPress={() => navigation.navigate("HomeNav")}
         >
-          <Image source={require('../../assets/graphics/OkayButton.png')} style={globalStyles.okayButton} resizeMode="contain" />
+          <Image
+            source={require("../../assets/graphics/OkayButton.png")}
+            style={globalStyles.okayButton}
+            resizeMode="contain"
+          />
         </Pressable>
-      </View >
-    </SafeAreaView >
+      </View>
+    </SafeAreaView>
   );
 }
 
@@ -101,6 +121,5 @@ const styles = StyleSheet.create({
     fontSize: 20,
     paddingVertical: 10,
   },
-  buttonText: {
-  },
+  buttonText: {},
 });
