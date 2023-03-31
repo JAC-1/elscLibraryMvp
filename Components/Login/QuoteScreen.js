@@ -25,7 +25,7 @@ class RNConfetti extends React.PureComponent {
         colors={["teal", "aquamarine", "turquoise", "navyblue", "blue"]}
         origin={{
           x: Dimensions.get("window").width / 2,
-          y: 0,
+          y: -30,
         }}
         autoStart={true}
         fadeOut={true}
@@ -39,7 +39,7 @@ export default function QuoteScreen({ navigation }) {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       navigation.navigate("HomeNav");
-    }, 3000);
+    }, 4000);
 
     return () => {
       clearTimeout(timeoutId);
