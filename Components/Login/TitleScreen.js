@@ -6,13 +6,7 @@ import Svg, { Path } from "react-native-svg";
 
 import { useFonts } from "expo-font";
 
-import {
-  StyleSheet,
-  View,
-  Text,
-  Pressable,
-  Image,
-} from "react-native";
+import { StyleSheet, View, Text, Pressable, Image } from "react-native";
 
 export default function TitleScreen({ navigation }) {
   const [loaded] = useFonts({
@@ -82,13 +76,21 @@ export default function TitleScreen({ navigation }) {
             onPress={() => navigation.navigate("Login")}
             style={styles.buttonContainer}
           >
-            <Image source={require('../../assets/graphics/LoginButton.png')} style={styles.loginButton} resizeMode="contain" />
+            <Image
+              source={require("../../assets/graphics/LoginButton.png")}
+              style={styles.loginButton}
+              resizeMode="contain"
+            />
           </Pressable>
           <Pressable
             onPress={() => navigation.navigate("Register")}
             style={styles.buttonContainer}
           >
-            <Image source={require('../../assets/graphics/RegisterButton.png')} style={styles.registerButton} resizeMode="contain" />
+            <Image
+              source={require("../../assets/graphics/RegisterButton.png")}
+              style={styles.registerButton}
+              resizeMode="contain"
+            />
           </Pressable>
         </View>
       </View>
@@ -114,10 +116,9 @@ const styles = StyleSheet.create({
     fontFamily: "Pattaya-Regular",
     margin: -20,
 
-    shadowColor: "#000",
-    shadowOffset: { width: 2, height: 2 },
-    shadowOpacity: 1,
-    shadowRadius: 3,
+    textShadowColor: "#000",
+    textShadowOffset: { width: 2, height: 2 },
+    textShadowRadius: 3,
 
     transform: [{ rotate: "-10deg" }],
   },
@@ -125,19 +126,19 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     alignItems: "center",
-    justifyContent: "flex-end"
+    justifyContent: "flex-end",
   },
   buttonContainer: {
-    paddingVertical: "4%"
+    paddingVertical: "4%",
   },
   loginButton: {
     width: "70%",
     height: undefined,
-    aspectRatio: 2.7
+    aspectRatio: 2.7,
   },
   registerButton: {
     width: "60%",
     height: undefined,
-    aspectRatio: 2.7
-  }
+    aspectRatio: 2.7,
+  },
 });
