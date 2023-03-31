@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Text,
   Image,
+  BackHandler,
   SafeAreaView,
   Dimensions,
 } from "react-native";
@@ -45,6 +46,20 @@ export default function QuoteScreen({ navigation }) {
       clearTimeout(timeoutId);
     };
   }, [navigation]);
+
+  useEffect(() => {
+    const backAction = () => {
+      /* Return `true` to prevent going back from this screen */
+      return true;
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      backAction
+    );
+
+    return () => backHandler.remove();
+  }, []);
 
   const [loaded] = useFonts({
     BebasNeue: require("../../assets/fonts/BebasNeue-Regular.ttf"),

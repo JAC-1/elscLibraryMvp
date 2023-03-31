@@ -11,13 +11,7 @@ import {
   Image,
   ScrollView,
   SafeAreaView,
-  Platform,
 } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-const Stack = createStackNavigator();
 
 export default function SettingsScreen({ navigation }) {
   return (
@@ -55,7 +49,7 @@ export default function SettingsScreen({ navigation }) {
           <Text style={styles.text}>DUE 01/24</Text>
         </View>
       </View>
-    </ScrollView >
+    </ScrollView>
   );
 }
 
@@ -97,7 +91,6 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: "center",
     justifyContent: "center",
-
   },
   buttonContainer: {
     justifyContent: "center",

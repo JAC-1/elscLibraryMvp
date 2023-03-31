@@ -1,7 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { useFonts } from "expo-font";
 import React, { useState } from "react";
-import { LinearGradient } from "expo-linear-gradient";
 import Svg, { Path } from "react-native-svg";
 import {
   StyleSheet,
@@ -35,8 +34,6 @@ export default function Settings({ navigation }) {
   if (!loaded) {
     return null;
   }
-  const staticWidth = Dimensions.get("window").width;
-  const staticHeight = Dimensions.get("window").height;
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
       <StatusBar style="dark" />
@@ -124,7 +121,7 @@ export default function Settings({ navigation }) {
             <TextInput style={styles.input}></TextInput>
             <Pressable
               style={styles.purpleButton}
-              onPress={() => navigation.navigate("QuoteScreen")}
+              onPress={() => navigation.navigate("History")}
             >
               <Text style={styles.purpleButtonText}>Change</Text>
             </Pressable>
