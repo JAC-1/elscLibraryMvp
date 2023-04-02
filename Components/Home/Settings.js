@@ -35,86 +35,58 @@ export default function Settings({ navigation }) {
   if (!loaded) {
     return null;
   }
+
   const staticWidth = Dimensions.get("window").width;
   const staticHeight = Dimensions.get("window").height;
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
       <StatusBar style="dark" />
-      <ScrollView
-        style={styles.scrollView}
-        contentContainerStyle={styles.contentContainer}
-      >
-        <Image
-          style={styles.bookWireframe}
-          source={require("../../assets/images/woman.png")}
-        />
+      <ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainer}>
+        <Image style={styles.bookWireframe} source={require("../../assets/images/woman.png")} />
 
         <View style={styles.keyAndValueContainers}>
-          <Text style={[styles.keySpan, styles.fontFragment]}>
-            NAME(ローマ字):
-          </Text>
-          <Text style={[styles.valueSpan, styles.fontFragment]}>
-            Jordan Nakamura
-          </Text>
+          <Text style={[styles.keySpan, styles.fontFragment]}>NAME(ローマ字):</Text>
+          <Text style={[styles.valueSpan, styles.fontFragment]}>Jordan Nakamura</Text>
         </View>
 
         <View style={styles.keyAndValueContainers}>
           <Text style={[styles.keySpan, styles.fontFragment]}>NAME(漢字):</Text>
-          <Text style={[styles.valueSpan, styles.fontFragment]}>
-            ジョジョ　中村
-          </Text>
+          <Text style={[styles.valueSpan, styles.fontFragment]}>ジョジョ　中村</Text>
         </View>
 
         <View style={styles.keyAndValueContainers}>
           <Text style={[styles.keySpan, styles.fontFragment]}>Student ID:</Text>
-          <Text style={[styles.valueSpan, styles.fontFragment]}>
-            2A12314123T%2
-          </Text>
+          <Text style={[styles.valueSpan, styles.fontFragment]}>2A12314123T%2</Text>
         </View>
         <View style={styles.keyAndValueContainers}>
           <Text style={[styles.keySpan, styles.fontFragment]}>Email:</Text>
-          <Text style={[styles.valueSpan, styles.fontFragment]}>
-            guyfieri@hotmail.com
-          </Text>
+          <Text style={[styles.valueSpan, styles.fontFragment]}>guyfieri@hotmail.com</Text>
         </View>
 
         <View style={styles.purpleUnderlinedContainer}>
           <Pressable onPress={() => navigation.navigate("History")}>
-            <Text style={[styles.purpleUnderlined, styles.fontFragment]}>
-              Change email
-            </Text>
+            <Text style={[styles.purpleUnderlined, styles.fontFragment]}>Change email</Text>
           </Pressable>
           <Pressable onPress={() => navigation.navigate("History")}>
-            <Text style={[styles.purpleUnderlined, styles.fontFragment]}>
-              Change password
-            </Text>
+            <Text style={[styles.purpleUnderlined, styles.fontFragment]}>Change password</Text>
           </Pressable>
         </View>
 
         <View style={styles.emojisPartContainer}>
           <Pressable onPress={() => navigation.navigate("History")}>
             <View style={styles.emojisPartDividedForFlexSpaceBetween}>
-              <Text style={[styles.emojisPart, styles.fontFragment]}>
-                Report a bug
-              </Text>
+              <Text style={[styles.emojisPart, styles.fontFragment]}>Report a bug</Text>
               <Text style={[styles.emojisPart, styles.fontFragment]}>😅</Text>
             </View>
           </Pressable>
           <Pressable onPress={show}>
             <View style={styles.emojisPartDividedForFlexSpaceBetween}>
-              <Text style={[styles.emojisPart, styles.fontFragment]}>
-                Make a suggestion
-              </Text>
+              <Text style={[styles.emojisPart, styles.fontFragment]}>Make a suggestion</Text>
               <Text style={[styles.emojisPart, styles.fontFragment]}>🤩</Text>
             </View>
           </Pressable>
         </View>
-        <Modal
-          visible={visible}
-          onRequestClose={hide}
-          animationType="slide"
-          transparent
-        >
+        <Modal visible={visible} onRequestClose={hide} animationType="slide" transparent>
           <Pressable style={styles.upper} onPress={hide} />
           <View style={styles.lower}>
             <Button title="Hide" onPress={hide} />
@@ -147,8 +119,7 @@ const styles = StyleSheet.create({
     height: "100%",
     flexDirection: "column",
     backgroundColor: "white",
-    paddingTop:
-      Platform.OS === "android" ? Dimensions.get("window").height * 0.05 : 0,
+    paddingTop: Platform.OS === "android" ? Dimensions.get("window").height * 0.05 : 0,
   },
   scrollView: {
     height: "100%",
