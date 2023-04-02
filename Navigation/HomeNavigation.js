@@ -54,5 +54,4 @@ export default function HomeNavigation() {
       <HomeTab.Screen name={"Settings"} component={Settings} />
     </HomeTab.Navigator>
   );
-
 }
