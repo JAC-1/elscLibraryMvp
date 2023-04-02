@@ -1,0 +1,20 @@
+[
+  {
+    "id": "b37d4271-d0ad-44c4-adb0-4ac859191c60",
+    "nit_code": "9780194232371",
+    "student_id": "2A12314123T%2",
+    "checked_out_at": "2023-03-17 06:41:31.307",
+    "returned": true,
+    "returned_at": "2023-03-17 07:02:56.179",
+    "condition": "Pretty new",
+  },
+  {
+    "id": "2cfed476-5fac-45d8-9621-374d04c26f7d",
+    "nit_code": "9780194232371",
+    "student_id": "2A12314123T%2",
+    "checked_out_at": "2023-03-17 06:41:31.307",
+    "returned": true,
+    "returned_at": null,
+    "condition": null,
+  }
+]
