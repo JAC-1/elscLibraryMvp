@@ -22,7 +22,7 @@ export default function LoginScreen({ navigation }) {
   const [password, setPassword] = useState("");
 
   const handleEmailChange = (text) => {
-    if (/^[a-zA-Z0-9@._-]+$/.test(text)) {
+    if (/^[a-zA-Z0-9@._-]+$/.test(text) || text === "") {
       setEmail(text);
     }
   };
@@ -32,7 +32,7 @@ export default function LoginScreen({ navigation }) {
     const passwordRegex = /^[A-Za-z0-9_-]+$/;
 
     // Check if the input matches the password regex pattern
-    if (passwordRegex.test(text)) {
+    if (passwordRegex.test(text) || text === "") {
       setPassword(text);
     }
   };
@@ -45,7 +45,7 @@ export default function LoginScreen({ navigation }) {
     return null;
   }
   return (
-    <View style={globalStyles.safeAreaContainer}>
+    <ScrollView style={styles.safeAreaContainer}>
       <StatusBar style="dark" />
       <View style={styles.container}>
         <Text style={styles.header}>Login</Text>
@@ -73,7 +73,7 @@ export default function LoginScreen({ navigation }) {
           />
         </Pressable>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
