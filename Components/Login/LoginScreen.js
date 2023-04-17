@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import "react-native-gesture-handler";
 import { globalStyles } from "../../Styles/globalStyles";
@@ -14,10 +14,29 @@ import {
   Text,
   Pressable,
   Image,
-  View
+  View,
 } from "react-native";
 
 export default function LoginScreen({ navigation }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleEmailChange = (text) => {
+    if (/^[a-zA-Z0-9@._-]+$/.test(text) || text === "") {
+      setEmail(text);
+    }
+  };
+
+  const handlePasswordChange = (text) => {
+    // Define a regex pattern to match the allowed characters for the password input
+    const passwordRegex = /^[A-Za-z0-9_-]+$/;
+
+    // Check if the input matches the password regex pattern
+    if (passwordRegex.test(text) || text === "") {
+      setPassword(text);
+    }
+  };
+
   const [loaded] = useFonts({
     BebasNeue: require("../../assets/fonts/BebasNeue-Regular.ttf"),
   });
@@ -26,24 +45,35 @@ export default function LoginScreen({ navigation }) {
     return null;
   }
   return (
-    <View style={styles.safeAreaContainer}>
+    <ScrollView style={styles.safeAreaContainer}>
       <StatusBar style="dark" />
-      <View
-        style={styles.container}
-      >
+      <View style={styles.container}>
         <Text style={styles.header}>Login</Text>
         <Text style={styles.span}>Email</Text>
-        <TextInput style={styles.input} />
+        <TextInput
+          style={styles.input}
+          value={email}
+          onChangeText={handleEmailChange}
+          secureTextEntry={false}
+        />
         <Text style={styles.span}>Password</Text>
-        <TextInput style={styles.input} />
+        <TextInput
+          style={styles.input}
+          value={password}
+          onChangeText={handlePasswordChange}
+          secureTextEntry={true}
+        />
         <Pressable
           onPress={() => navigation.navigate("QuoteScreen")}
           style={globalStyles.buttonContainer}
         >
-          <Image source={require('../../assets/graphics/LoginButton.png')} style={globalStyles.loginButton} />
+          <Image
+            source={require("../../assets/graphics/LoginButton.png")}
+            style={globalStyles.loginButton}
+          />
         </Pressable>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
